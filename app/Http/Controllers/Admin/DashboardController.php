@@ -16,8 +16,7 @@ class DashboardController extends Controller
     {
         //
         return view('dashboard', [
-            'task' => $task,
-        ]);
+            /*  'task' => $task, */]);
     }
 
     /**
@@ -35,7 +34,8 @@ class DashboardController extends Controller
     {
         //
         $task = Task::make();
-        $task->description = $request->input('description');
+        // $task->description = $request->input('description');
+        $task->description = $request->validate(['description' => 'required']);
         $task->user_id = Auth::id();
         $task->save();
 
