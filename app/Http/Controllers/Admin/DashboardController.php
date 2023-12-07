@@ -32,14 +32,20 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-            //
-            /* $task = Task::make();
+        //
+        $task = Task::make();
         // $task->description = $request->input('description');
         $task->description = $request->validate(['description' => 'required']);
         $task->user_id = Auth::id();
-        $task->save() */;
+        $task->save();
 
-        // return redirect('/users');
+        // Flash a success message to the session
+        // session()->flash('success', 'Post created successfully.');
+        session()->flash('success', 'Tâche créée avec succès.');
+
+        return view('dashboard', [
+            'task' => $task,
+        ]);
     }
 
     /**
