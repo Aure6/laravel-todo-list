@@ -18,24 +18,32 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm p-6 sm:rounded-lg">
-                <h1>Todo List</h1>
+                <h1 class="text-xl">Todo List</h1>
                 <form action="{{ route('task.store') }}" method="POST" class="flex items-center	gap-4">
                     @csrf
                     <label for="task">Tâche à ajouter:</label>
-                    <input name="task" type="text">
-                    {{-- <button type="submit"
-                        class="p-2 px-4 transition duration-300 ease-in-out bg-gradient-to-r from-[#8c0038] to-[#d63a76] hover:from-rose-900 hover:to-rose-700 text-white">
-                        Ajouter
-                    </button> --}}
-                    {{-- <button type="submit"
-                        class="p-2 px-4 transition bg-opacity-0 hover:bg-opacity-100 duration-300 ease-in-out bg-gradient-to-r from-rose-700 to-rose-900 hover:from-rose-900 hover:to-rose-700 text-white">
-                        Ajouter
-                    </button> --}}
+                    <input name="description" type="text">
                     <button type="submit"
                         class="p-2 px-4 transition duration-300 ease-in-out bg-gradient-to-r bg-rose-800 hover:bg-rose-500 text-white">
                         Ajouter
                     </button>
                 </form>
+                {{-- Liste des tâches --}}
+                <ul class="mt-4 {{-- space-y-2  --}}divide-y">
+                    @foreach ($tasks as $task)
+                        <li>
+                            <form action="{{ route('task.destroy', $task->id) }}" method="POST">
+                                {{ $task['description'] }}
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit"
+                                    class="p-2 px-4 transition duration-300 ease-in-out text-red-500 bg-red-100">
+                                    Supprimer
+                                </button>
+                            </form>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>

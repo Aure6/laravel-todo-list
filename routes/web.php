@@ -30,7 +30,9 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
     // To add a task
-    Route::post('/dashboard', [DashboardController::class, 'store'])->name('task.store');
+    Route::post('/task', [DashboardController::class, 'store'])->name('task.store');
+    // To delete a task
+    Route::delete('/task/{task}', [DashboardController::class, 'destroy'])->name('task.destroy');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

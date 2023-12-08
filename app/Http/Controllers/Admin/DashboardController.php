@@ -14,9 +14,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        //
+        $tasks =  Task::get();
         return view('dashboard', [
-            /* 'task' => $task, */]);
+            'tasks' => $tasks,
+        ]);
     }
 
     /**
@@ -46,10 +47,7 @@ class DashboardController extends Controller
         // session()->flash('success', 'Post created successfully.');
         session()->flash('success', 'Tâche créée avec succès.');
 
-        /* return view('dashboard', [
-            'task' => $task,
-        ]); */
-        // return back();
+        return back();
     }
 
     /**
@@ -81,6 +79,8 @@ class DashboardController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        $task->delete();
+
+        return back();
     }
 }
