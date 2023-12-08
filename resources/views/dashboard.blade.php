@@ -32,7 +32,7 @@
                         Ajouter
                     </button> --}}
                     <button type="submit"
-                        class="p-2 px-4 transition duration-300 ease-in-out bg-gradient-to-r bg-rose-900 hover:bg-rose-700 text-white">
+                        class="p-2 px-4 transition duration-300 ease-in-out bg-gradient-to-r bg-rose-800 hover:bg-rose-500 text-white">
                         Ajouter
                     </button>
                 </form>
