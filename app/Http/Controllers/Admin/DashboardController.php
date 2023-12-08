@@ -35,7 +35,10 @@ class DashboardController extends Controller
         //
         $task = Task::make();
         // $task->description = $request->input('description');
-        $task->description = $request->validate(['description' => 'required']);
+        $validatedData = $request->validate([
+            'description' => 'required'
+        ]);
+        $task->description = $validatedData['description'];
         $task->user_id = Auth::id();
         $task->save();
 
@@ -43,9 +46,10 @@ class DashboardController extends Controller
         // session()->flash('success', 'Post created successfully.');
         session()->flash('success', 'Tâche créée avec succès.');
 
-        return view('dashboard', [
+        /* return view('dashboard', [
             'task' => $task,
-        ]);
+        ]); */
+        // return back();
     }
 
     /**

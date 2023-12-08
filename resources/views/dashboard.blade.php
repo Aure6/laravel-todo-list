@@ -19,16 +19,28 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm p-6 sm:rounded-lg">
                 <h1>Todo List</h1>
-                <form action="{{ route('task.add', $task->id) }}" method="POST">
+                <form action="{{ route('task.store') }}" method="POST" class="flex items-center	gap-4">
                     @csrf
                     <label for="task">Tâche à ajouter:</label>
                     <input name="task" type="text">
+                    {{-- <button type="submit"
+                        class="p-2 px-4 transition duration-300 ease-in-out bg-gradient-to-r from-[#8c0038] to-[#d63a76] hover:from-rose-900 hover:to-rose-700 text-white">
+                        Ajouter
+                    </button> --}}
+                    {{-- <button type="submit"
+                        class="p-2 px-4 transition bg-opacity-0 hover:bg-opacity-100 duration-300 ease-in-out bg-gradient-to-r from-rose-700 to-rose-900 hover:from-rose-900 hover:to-rose-700 text-white">
+                        Ajouter
+                    </button> --}}
+                    <button type="submit"
+                        class="p-2 px-4 transition duration-300 ease-in-out bg-gradient-to-r bg-rose-900 hover:bg-rose-700 text-white">
+                        Ajouter
+                    </button>
                 </form>
             </div>
         </div>
     </div>
 
-    <div class="py-12">
+    {{-- <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
@@ -36,5 +48,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </x-app-layout>
