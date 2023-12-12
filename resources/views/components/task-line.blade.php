@@ -1,11 +1,18 @@
 <li>
-    <!-- It is not the man who has too little, but the man who craves more, that is poor. - Seneca -->
-    <form action="{{ route('task.add', $task->id) }}"method="POST"></form>
-    @csrf
-    @method('DELETE')
+    {{-- checkbox --}}
+    <input type="checkbox" name="">
+
+    {{-- description of the task --}}
     <div class="flex-grow text-gray-700 text-sm text-justify">
         {{ $task->description }}
+        {{-- {{ $task['description'] }} --}}
     </div>
-    <button type="submit" class="text-red-400">{{-- TODO icône de checkbox --}}</button>
-    <button type="submit" class="text-red-400">Delete</button>
+
+    {{-- delete --}}
+    <form action="{{ route('task.destroy', $task->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button x-data="" x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
+            class="text-red-400">SUPPRIMER<i class="ri-delete-bin-7-line"></i></button>
+    </form>
 </li>
