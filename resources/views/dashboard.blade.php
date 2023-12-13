@@ -29,7 +29,7 @@
                     </button>
                 </form>
                 {{-- Liste des tâches --}}
-                <ul class="mt-4 {{-- space-y-2  --}}divide-y">
+                <ul class="mt-4 divide-y">
                     @foreach ($tasks as $task)
                         <x-task-line :task="$task">
                         </x-task-line>
