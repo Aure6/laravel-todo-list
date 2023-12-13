@@ -32,18 +32,6 @@
                 <ul class="mt-4 {{-- space-y-2  --}}divide-y">
                     @foreach ($tasks as $task)
                         <x-task-line :task="$task">
-                            {{-- <li>
-                                <form action=" {{ route('task.complete', $task->id) }} " method="POST">
-                                    @csrf
-                                     <button type="submit" class="">
-                                    @if ($task['completed'] === 'true')
-                                        <x-gmdi-check-box-o class="h-6 w-6" />
-                                    @else
-                                        <x-gmdi-check-box-outline-blank-o class="h-6 w-6" />
-                                    @endif
-                                </button>
-                                </form>
-                            </li> --}}
                         </x-task-line>
                     @endforeach
                 </ul>
