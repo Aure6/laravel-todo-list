@@ -19,6 +19,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm p-6 sm:rounded-lg">
                 <h1 class="text-xl">Todo List</h1>
+                {{-- Form for adding a task --}}
                 <form action="{{ route('task.store') }}" method="POST" class="flex items-center	gap-4">
                     @csrf
                     <label for="task">Tâche à ajouter:</label>
@@ -28,7 +29,7 @@
                         Ajouter
                     </button>
                 </form>
-                {{-- Liste des tâches --}}
+                {{-- Tasks list --}}
                 <ul class="mt-4 divide-y">
                     @foreach ($tasks as $task)
                         <x-task-line :task="$task">
