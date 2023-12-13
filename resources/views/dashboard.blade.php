@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <x-modal name="confirm-task-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
+    <x-modal name="confirm-task-deletion" {{-- :show="$errors->userDeletion->isNotEmpty()" --}} focusable>
         <form method="post" action="{{ route('task.destroy', $task->id) }}" class="p-6">
             @csrf
             @method('delete')
