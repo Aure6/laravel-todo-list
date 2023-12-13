@@ -20,7 +20,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm p-6 sm:rounded-lg">
                 <h1 class="text-xl">Todo List</h1>
                 {{-- Form for adding a task --}}
-                <form action="{{ route('task.store') }}" method="POST" class="flex items-center	gap-4">
+                <form action="{{ route('task.store') }}" method="POST" class="flex flex-wrap items-center	gap-2">
                     @csrf
                     <label for="task">Tâche à ajouter:</label>
                     <input name="description" type="text">
