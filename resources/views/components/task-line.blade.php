@@ -1,6 +1,6 @@
 <li>
     {{-- checkbox --}}
-    <input type="checkbox" name="" class="inline-flex">
+    <input type="checkbox" name="" class="inline-flex" onclick="getValue()" id="">
 
     {{-- description of the task --}}
     <div class="inline-flex flex-grow
@@ -17,3 +17,10 @@
             class="text-red-400">SUPPRIMER<i class="ri-delete-bin-7-line"></i></button>
     </form>
 </li>
+
+<script>
+    // JS function to put checked tasks in another section with all the done tasks. There must be two sections in the dashboard view, "todo" and "done".
+    /* function getValue() {
+        const checkbox = document.getElement
+    } */
+</script>
