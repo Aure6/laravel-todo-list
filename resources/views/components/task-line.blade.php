@@ -21,6 +21,7 @@
 <script>
     // JS function to put checked tasks in another section with all the done tasks. There must be two sections in the dashboard view, "todo" and "done".
     /* function getValue() {
-        const checkbox = document.getElement
+        // Get the checkbox element
+        const checkbox = document.getElementById('myCheckbox');
     } */
 </script>
