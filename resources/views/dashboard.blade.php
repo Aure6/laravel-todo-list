@@ -22,8 +22,11 @@
                 {{-- Form for adding a task --}}
                 <form action="{{ route('task.store') }}" method="POST" class="flex flex-wrap items-center	gap-2">
                     @csrf
-                    <label for="task">Tâche à ajouter:</label>
-                    <input name="description" type="text">
+                    {{-- <label for="task">Tâche à ajouter:</label> --}}
+                    <x-input-label for="description" value="{{ __('Tâche à ajouter:') }}" class="sr-only" />
+                    {{-- <input name="description" type="text" placeholder="Tâche à ajouter"> --}}
+                    <x-text-input id="description" name="description" type="description" class="mt-1 block w-3/4"
+                        placeholder="{{ __('Tâche à ajouter') }}" />
                     <button type="submit"
                         class="p-2 px-4 transition duration-300 ease-in-out bg-gradient-to-r bg-rose-800 hover:bg-rose-500 text-white">
                         Ajouter
