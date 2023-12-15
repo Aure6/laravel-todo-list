@@ -29,6 +29,8 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+    // Lang
+    Route::get('/dashboard', [DashboardController::class, 'langapp'])->name('lang.switch');
     // To add a task
     Route::post('/task', [DashboardController::class, 'store'])->name('task.store');
     // To delete a task

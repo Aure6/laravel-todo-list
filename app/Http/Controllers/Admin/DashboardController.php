@@ -9,11 +9,15 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+    public function langapp()
+    {
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        // $tasks = Task::where('user_id', Auth::user()->id)->orderByDesc('created_at')->get();
         $tasks =  Task::get();
         return view('dashboard', [
             'tasks' => $tasks,
@@ -33,7 +37,6 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $task = Task::make();
         // $task->description = $request->input('description');
         $validatedData = $request->validate([
