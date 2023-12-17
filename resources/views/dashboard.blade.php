@@ -18,7 +18,7 @@
     <div class="py-2 sm:py-12">
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm p-6 sm:rounded-lg">
-                <h1 class="text-xl">Todo List</h1>
+                <h1 class="text-xl">{{ __('Todo List') }}</h1>
                 {{-- Form for adding a task --}}
                 <form action="{{ route('task.store') }}" method="POST" class="flex flex-wrap items-center	gap-2">
                     @csrf

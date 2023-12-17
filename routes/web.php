@@ -29,8 +29,15 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-    // Lang
+    // Lang switch
     // Route::get('/dashboard', [DashboardController::class, 'langapp'])->name('lang.switch');
+    /* Route::get('/lang/{locale}', function ($locale) {
+        app()->setLocale($locale);
+        session()->put('locale', $locale);
+        // On redirige vers la page précédente
+        return redirect()->back();
+    })->middleware('locale')->name('lang.switch'); */
+    Route::get('/language-switch', [DashboardController::class, 'languageSwitch'])->name('lang.switch');
     // To add a task
     Route::post('/task', [DashboardController::class, 'store'])->name('task.store');
     // To delete a task

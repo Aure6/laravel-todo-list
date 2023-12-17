@@ -15,11 +15,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('ENG') }}
+                    <x-nav-link :href="route('lang.switch', ['locale' => 'en'])" :active="request()->routeIs('lang.switch', ['locale' => 'en'])">
+                        {{ __('English') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('FR') }}
+                    <x-nav-link :href="route('lang.switch', ['locale' => 'fr'])" :active="request()->routeIs('lang.switch', ['locale' => 'fr'])">
+                        {{ __('French') }}
                     </x-nav-link>
                 </div>
             </div>

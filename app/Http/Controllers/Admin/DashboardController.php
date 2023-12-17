@@ -9,9 +9,20 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    public function langapp()
+    /**
+     * Switch languages
+     */
+    public function languageSwitch(Request $request)
     {
+        // Get the language
+        $language = $request->input('langauge');
+
+        // Store the language in the session
+        session(['language' => $language]);
+
+        return redirect()->back()->with(['language_switched' => $language]);
     }
+
     /**
      * Display a listing of the resource.
      */
